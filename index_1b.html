@@ -16,59 +16,125 @@
             });
         </script>
         <title>Taxi Sharing</title>
+        <style>
+            h1{
+               
+                text-align:center;
+                font-size: 7vw;
+            }
+            h2 {
+                text-align:center;
+                font-size:1.5vw;
+            }
+         
+            form {
+                display:inline-block;
+                float:left;
+                 
+                text-align:center;
+               font-size:1vw;
+                width: 19vw;
+                height: 15vw;
+                border: .25vw solid black;
+               }
+
+            input[type=text], select, textarea {
+            
+                 width:5vw; 
+                 height:1vw;           }
+
+
+            input[type=submit] {
+                font-size: 1vw;
+                height: 2vw;
+                position: relative;
+            }
+                
+                    input[type=submit]:hover {
+                    background-color: #45a049;
+           }
+
+            .app {
+             background-color: #f2f2f2;
+             }
+
+            /* Clear floats after the columns */
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+      </style>
+
     </head>
     <body>
+       
+  
         <div class="app">
             <h1>Taxi Sharing</h1>
             <!-- TODO 1(b)(i)-(v) Function buttons:-->
             <!---(i) register -->
-            <h2> Register new user</h2>
-            <form action="">
-                Name: <br />
+            
+            <form action="" id="registerform">
+                <h2> Register new user</h2>
+                Name:
                 <input type="text" name="thename" /><br />
-                OU Usernumber:<br />
+                OU User number:
                 <input type="text" name="OUCU" />
-                <br /><br />
-                <input type="submit" value="Submit" />
+                <br /><br /><br />
+                <input type="submit" value="Register new user" />
             </form>
 
             <!----(ii) volunteer-->
-            <h2> Offer a taxi-ride</h2>
-            <form action="">
-                Start time: <br />
+            
+            <form action="" id="offerform">
+                <h2> Offer a taxi-ride</h2>
+                Start time: 
                 <input type="text" name="offerstarttime" /><br />
-                End time: <br />
+                End time:
                 <input type="text" name="offerendtime" /><br />
-                Pick up location:<br />
+                Pick up location:
                 <input type="text" name="offerpickuplocation" />
                 <br /><br />
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Make Offer" />
             </form>
 
             <!----(iii) request-->
-            <h2> Request to share a taxi-ride</h2>
-            <form action="">
-                Start time: <br />
+            
+            <form action="" id="requestform">
+                <h2> Request to share a taxi-ride</h2>
+                Start time:
                 <input type="text" name="requeststarttime" /><br />
-                Pick up location:<br />
+                Pick up location:
                 <input type="text" name="requestpickuplocation" />
-                <br /><br />
-                <input type="submit" value="Submit" />
+                <br /><br /><br />
+                <input type="submit" value="Request Share" />
             </form>
 
             <!----(iv) cancel-->
-            <h2>Cancel offer or request</h2>
-            <button type="submit" value="Cancel"> Cancel</button>
+          
+               <form action="" id="cancelform">
+                <h2>Cancel offer or request of a user</h2>
+                Please enter the user number<br />
+                to cancel all offers and requests<br />
+                User number:
+                <input type="text" name="cancelall" /><br />
+                <input type="submit" value="Cancel all">
+                </form>
 
-            <!----(v) update-->
-            <h2>Update map of offers and requests</h2>
-            <button type="submit" value="Update"> Update</button>
 
-            <!-- TODO 1(c) Map canvas //-->
+                <!----(v) update-->
+                <form action="" id="updateform">
+                <h2>Update map of offers and requests</h2>
+                    <br /><br /><br />
+                <input type="submit" value="Update"> 
+                </form>
+
+                <!-- TODO 1(c) Map canvas //-->
 
 
 
-        </div>
+</div>
   <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js" charset="utf-8"></script>
   <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js" charset="utf-8"></script>
   <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js" charset="utf-8"></script>
