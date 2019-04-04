@@ -1,0 +1,156 @@
+<html>
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+	<meta http-equiv="Content-Security-Policy" content="">
+        <script type="text/javascript" src="cordova.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.js"></script>
+    	<script type="text/javascript" id="jqm-trans-disable">
+            /* For having a faster transition */
+            $(document).on("mobileinit", function() {
+                            $.mobile.defaultPageTransition = "none";
+                            $.mobile.defaultDialogTransition = "none";
+            });
+        </script>
+        <title>Taxi Sharing</title>
+        <style>
+            h1{
+               
+                text-align:center;
+                font-size: 7vw;
+            }
+            h2 {margin-top:1vw;
+                text-align:center;
+                font-size:1.5vw;
+            }
+         
+            form {
+                text-align:center;
+                font-display:block;
+                display:inline-table;
+                font-size:1vw;
+                width: 18vw;
+                height: 16vw;
+                border: .25vw solid black;
+                max-height:150px;
+               }
+
+            input[type=text], select, textarea {
+                text-align:center;
+                position:relative;
+                width: 5vw;
+                height: 1vw;
+            }
+
+
+            input[type=submit] {
+                position:relative;
+               margin-top:auto;
+                text-align:center;
+                font-size: 1vw;
+                height: 2vw;
+            }
+                
+                    input[type=submit]:hover {
+                    background-color: #45a049;
+           }
+
+            .app {
+             background-color: #f2f2f2;
+             }
+            #mapContainer{
+                background-color:dimgrey;
+                height:40%; width:100%;
+                position:relative;
+                bottom:1px;
+            }
+
+            /* Clear floats after the columns */
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+      </style>
+
+    </head>
+    <body>
+       
+  
+        <div class="app">
+            <h1>Taxi Sharing</h1>
+            <!-- TODO 1(b)(i)-(v) Function buttons:-->
+            <!---(i) register -->
+
+            <form action="" id="registerform">
+                <h2> Register new user</h2>
+                Name:
+                <input type="text" name="thename" /><br />
+                OU User number:
+                <input type="text" name="OUCU" />
+                <br /><br /><br />
+                <input type="submit" value="Register new user" />
+            </form>
+
+            <!----(ii) volunteer-->
+
+            <form action="" id="offerform">
+                <h2> Offer a taxi-ride</h2>
+                Start time:
+                <input type="text" name="offerstarttime" /><br />
+                End time:
+                <input type="text" name="offerendtime" /><br />
+                Pick up location:
+                <input type="text" name="offerpickuplocation" />
+                <br /><br />
+                <input type="submit" value="Make Offer" />
+            </form>
+
+            <!----(iii) request-->
+
+            <form action="" id="requestform">
+                <h2> Request to share a taxi-ride</h2>
+                Start time:
+                <input type="text" name="requeststarttime" /><br />
+                Pick up location:
+                <input type="text" name="requestpickuplocation" />
+                <br /><br /><br />
+                <input type="submit" value="Request Share" />
+            </form>
+
+            <!----(iv) cancel-->
+
+            <form action="" id="cancelform">
+                <h2>Cancel offer or request of a user</h2>
+                Please enter the user number<br />
+                to cancel all offers and requests<br />
+                User number:
+                <input type="text" name="cancelall" /><br />
+                <input type="submit" value="Cancel all">
+            </form>
+
+
+            <!----(v) update-->
+            <form action="" id="updateform">
+                <h2>Update map of offers and requests</h2>
+                <br /><br /><br />
+                <input type="submit" value="Update">
+            </form>
+
+            <!-- TODO 1(c) Map canvas //-->
+            <div  id="mapContainer"></div>
+
+
+        </div>
+  <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js" charset="utf-8"></script>
+  <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js" charset="utf-8"></script>
+  <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js" charset="utf-8"></script>
+  <script type="text/javascript" src="http://js.api.here.com/v3/3.0/mapsjs-ui.js" charset="utf-8"></script>
+  <script type="text/javascript" src="http://js.api.here.com/v3/3.0/mapsjs-pano.js" charset="utf-8"></script>
+  <link rel="stylesheet" type="text/css" href="http://js.api.here.com/v3/3.0/mapsjs-ui.css" />
+  <script type="text/javascript" src="js/index.js"></script>
+ </body>
+</html>
